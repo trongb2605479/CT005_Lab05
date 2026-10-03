@@ -1,1 +1,1 @@
-#### CT005 – Lab05 – [Họ và tên của bạn] – [MSSV của bạn] – [Tên lớp học phần]
+#### CT005 – Lab05 – Phan Phú Trọng – B2605479 – CT005D05
