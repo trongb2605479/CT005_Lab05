@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lợi Ích Của Công Nghệ Số</title>
+    <title>Trang Giới Thiệu Cá Nhân</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,69 +15,134 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f7f6;
-            padding: 20px;
+            background: linear-gradient(135deg, #f0f7ff, #eefaf4);
+            padding: 25px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: #ffffff;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
         }
 
         header {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            padding-bottom: 18px;
             border-bottom: 2px solid #0066cc;
-            padding-bottom: 15px;
         }
 
-        h1 {
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid #dfeeff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
             color: #0066cc;
             font-size: 2rem;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #4b5563;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .intro {
+            background: #eef6ff;
+            border-left: 5px solid #0066cc;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            font-size: 1.04rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #edf2f7;
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .product-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .product {
+            padding-top: 6px;
+        }
+
+        .product h3 {
+            font-size: 1.1rem;
+            color: #1f2937;
             margin-bottom: 10px;
         }
 
-        .description {
-            font-size: 1.1rem;
-            background-color: #eef6ff;
-            padding: 15px 20px;
-            border-left: 5px solid #0066cc;
-            border-radius: 4px;
-            margin-bottom: 30px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .infographic-container {
-            text-align: center;
-        }
-
-        .infographic-container img {
-            max-width: 100%;
-            height: auto;
+        .product img {
+            width: 100%;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-top: 8px;
+        }
+
+        .pdf-box {
+            width: 100%;
+            height: 420px;
+            border: 1px solid #d9e0e8;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8fafc;
+        }
+
+        .pdf-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Tỉ lệ 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .video-container iframe {
@@ -89,53 +154,136 @@
             border: 0;
         }
 
+        ul {
+            margin-left: 20px;
+            color: #374151;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 9px 14px;
+            border-radius: 6px;
+            background: #0066cc;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .button.secondary {
+            background: #e5f0ff;
+            color: #0066cc;
+            border: 1px solid #bfd5ff;
+        }
+
         footer {
-            margin-top: 40px;
+            margin-top: 25px;
             padding-top: 15px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #e5e7eb;
             text-align: center;
             font-size: 0.9rem;
             color: #666;
         }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 110px;
+                height: 110px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- Tiêu đề trang -->
         <header>
-            <h1>Khám Phá Lợi Ích Của Công Nghệ Số</h1>
+            <div class="avatar">
+                <img src="Lab05_Ex2.1.png" alt="Ảnh đại diện">
+            </div>
+            <div class="hero">
+                <h1>Trần Quốc Bảo</h1>
+                <div class="subtitle">Sinh viên | Thiết kế Web | Nghiên cứu công nghệ số</div>
+                <div class="contact">Email: tranquocbao@example.com | SĐT: 0909 123 456</div>
+            </div>
         </header>
 
-        <!-- Đoạn mô tả ngắn -->
-        <section class="description">
-            <p><strong>Công nghệ số</strong> đóng vai trò vô cùng quan trọng trong thời đại hiện nay. Nó giúp tối ưu hóa quy trình làm việc, nâng cao hiệu suất lao động, kết nối con người toàn cầu một cách nhanh chóng và mở ra vô vàn cơ hội học tập, phát triển bản thân trực tuyến.</p>
+        <section class="intro">
+            <p><strong>Xin chào!</strong> Mình là Trần Quốc Bảo, hiện đang học tập và phát triển kỹ năng về công nghệ thông tin, thiết kế giao diện và web front-end. Mình luôn muốn tạo ra những sản phẩm sáng tạo, dễ sử dụng và mang tính ứng dụng cao trong đời sống thực tế.</p>
         </section>
 
-        <!-- Phần hiển thị Infographic -->
-        <section class="section infographic-container">
-            <h2>1. Infographic Tổng Quan</h2>
-            <img src="Lab05_Ex2.1.png" alt="Infographic Lợi ích công nghệ số">
-        </section>
+        <div class="content">
+            <main>
+                <div class="card">
+                    <h2>Giới thiệu bản thân</h2>
+                    <p>Mình yêu thích khám phá các xu hướng công nghệ mới, đặc biệt là AI, UX/UI, và phát triển website. Ngoài học tập, mình còn đam mê làm việc nhóm, sáng tạo nội dung và tìm hiểu cách tối ưu trải nghiệm người dùng.</p>
+                </div>
 
-        <!-- Phần nhúng Video YouTube -->
-        <section class="section">
-            <h2>2. Video Minh Họa</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/0hTDJWMM3es?si=EgrTLk1Mgooufqyt" 
-                    title="YouTube video player" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+                <div class="card">
+                    <h2>3 sản phẩm đã tạo</h2>
+                    <div class="product-list">
+                        <div class="product">
+                            <h3>1. File PDF</h3>
+                            <div class="pdf-box">
+                                <iframe src="Lab05_Ex1.2.pdf" title="PDF giới thiệu cá nhân"></iframe>
+                            </div>
+                            <a class="button" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Xem PDF</a>
+                        </div>
 
-        <!-- Ghi chú bản quyền AI ở cuối trang -->
+                        <div class="product">
+                            <h3>2. File PNG</h3>
+                            <img src="Lab05_Ex2.1.png" alt="Hình ảnh giới thiệu cá nhân hoặc infographic">
+                            <a class="button secondary" href="Lab05_Ex2.1.png" target="_blank" rel="noopener">Mở ảnh PNG</a>
+                        </div>
+
+                        <div class="product">
+                            <h3>3. Video YouTube</h3>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/0hTDJWMM3es?si=EgrTLk1Mgooufqyt"
+                                    title="Video giới thiệu công nghệ số"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <a class="button" href="https://www.youtube.com/watch?v=0hTDJWMM3es" target="_blank" rel="noopener">Xem trên YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside>
+                <div class="card">
+                    <h2>Kỹ năng</h2>
+                    <ul>
+                        <li>HTML &amp; CSS</li>
+                        <li>JavaScript cơ bản</li>
+                        <li>Thiết kế UI/UX</li>
+                        <li>Quản lý nội dung số</li>
+                        <li>Phân tích và trình bày thông tin</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Mục tiêu</h2>
+                    <p>Học tập và phát triển chuyên môn trong lĩnh vực công nghệ thông tin, đặc biệt là thiết kế và xây dựng trải nghiệm web hiện đại.</p>
+                </div>
+            </aside>
+        </div>
+
         <footer>
-            <p>© Nội dung và trang web này được hỗ trợ tạo bởi AI. Mọi quyền được bảo lưu.</p>
+            <p>© 2026 - Trang giới thiệu cá nhân được thiết kế và hỗ trợ bởi AI.</p>
         </footer>
     </div>
-
 </body>
 </html>
